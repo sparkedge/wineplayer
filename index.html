@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div id="left">
+        <video id="video_player">
+            <source src="" type="video/mp4">
+        </video>
+        <div id="progress_box">
+            <div id="progress_bar"></div>
+        </div>
+        <div id="control">
+            <div id="timing">
+                <p id="v_timing">00:00 / 00:00</p>
+            </div>
+            <div id="play_tools">
+                <i class='bx bxs-caret-left-circle' id="left_btn"></i>
+                <i class='bx bx-play-circle' id="play_btn"></i>
+                <i class='bx bxs-caret-right-circle' id="right_btn"></i>
+            </div>
+            <div id="other_tools">
+                <div id="vol_box">
+                    <input type="range" min="0" max="1" step="0.001" id="vol_control" style="display: none;">
+                    <i class='bx bxs-volume-full' id="volume"></i>
+                </div>
+                <div id="speed_box">
+                    <input type="range" min="0" max="2" step="0.25" id="speed_control" style="display: none;">
+                    <i class='bx bxs-tachometer' id="speed"></i>
+                </div>
+                <i class='bx bx-fullscreen' id="full_screen"></i>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        <div id="top">
+            <h3>Playlist</h3>
+            <input type="search" placeholder="Search Your Videos Here" id="search">
+            <i class='bx bxs-message-square-add' id="open_video_box_btn"></i>
+            <div id="add_video_box">
+                <h2>Add Videos</h2>
+                <form>
+                <input type="text" id="video_name" placeholder="Enter Your Video Name">
+                <input type="url" id="video_link" placeholder="Paste Your Video Link">
+                <center><button type="submit" id="video_play_btn">Add</button></center>
+                </form>
+            </div>
+        </div>
+        <div id="bottom">
+            
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
