@@ -43,15 +43,27 @@ var open_box_btn = document.getElementById("open_video_box_btn");
 open_box_btn.onclick = function()
 {
     var add_video_box = document.getElementById("add_video_box");
+    var left_blur = document.getElementById("left");
+    var bottom_blur = document.getElementById("bottom");
+    var search_blur = document.getElementById("search");
+    var playlist_blur = document.getElementById("playlist");
     if(open_box_btn.className == "bx bxs-message-square-add")
     {
         add_video_box.style.display = "block";
         open_box_btn.className = "bx bxs-message-square-x";
+        left_blur.style.filter = "blur(10px)";
+        bottom_blur.style.filter = "blur(10px)";
+        search_blur.style.filter = "blur(10px)";
+        playlist_blur.style.filter = "blur(10px)";
     }
     else if(open_box_btn.className == "bx bxs-message-square-x")
     {
         add_video_box.style.display = "none";
         open_box_btn.className = "bx bxs-message-square-add";
+        left_blur.style.filter = "blur(0px)";
+        bottom_blur.style.filter = "blur(0px)";
+        search_blur.style.filter = "blur(0px)";
+        playlist_blur.style.filter = "blur(0px)";
     }
 }
 
@@ -90,18 +102,18 @@ function load_video()
             p.setAttribute("id","playlist_video_name");
             p.className = "p_v_name";
             p.innerHTML = video_obj.name;
-            var del_btn = document.createElement("BUTTON");
-            del_btn.setAttribute("type","button");
-            del_btn.setAttribute("id","video_play_btn");
-            del_btn.className = "delete_btn";
-            del_btn.innerHTML = "Delete";
-
             var play_btn = document.createElement("BUTTON");
             play_btn.setAttribute("type","button");
             play_btn.setAttribute("id","video_delete_btn");
             play_btn.setAttribute("url",video_obj.link);
-            play_btn.innerHTML = "Play";
             play_btn.className = "v_play_btn";
+            play_btn.innerHTML = "Play";
+
+            var del_btn = document.createElement("BUTTON");
+            del_btn.setAttribute("type","button");
+            del_btn.setAttribute("id","video_play_btn");
+            del_btn.innerHTML = "Delete";
+            del_btn.className = "delete_btn";
 
             div.appendChild(p);
             div.appendChild(play_btn);
